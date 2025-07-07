@@ -1,0 +1,4 @@
+/* Sembunyikan scrollbar di semua elemen */
+::-webkit-scrollbar {
+  display: none;
+}
