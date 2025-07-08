@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 
 interface FilterState {
   priceRange: number[]
@@ -52,23 +52,23 @@ export default function PropertyFilter() {
   }
 
   return (
-    <Sheet>
-      <SheetTrigger asChild>
+    <Dialog>
+      <DialogTrigger asChild>
         <Button variant="outline" className="gap-2 bg-transparent">
           <Filter className="h-4 w-4" />
           Filter
         </Button>
-      </SheetTrigger>
-      <SheetContent className="w-80 overflow-y-auto">
-        <SheetHeader>
-          <SheetTitle className="flex items-center justify-between">
+      </DialogTrigger>
+      <DialogContent className="max-w-md max-h-[80vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle className="flex items-center justify-between">
             Filter Properti
             <Button variant="ghost" size="sm" onClick={clearFilters}>
               <X className="h-4 w-4" />
               Clear
             </Button>
-          </SheetTitle>
-        </SheetHeader>
+          </DialogTitle>
+        </DialogHeader>
 
         <div className="space-y-6 mt-6">
           {/* Price Range */}
@@ -149,7 +149,7 @@ export default function PropertyFilter() {
         </div>
 
         <Button className="w-full mt-6">Terapkan Filter</Button>
-      </SheetContent>
-    </Sheet>
+      </DialogContent>
+    </Dialog>
   )
 }
