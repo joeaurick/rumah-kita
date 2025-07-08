@@ -2,6 +2,7 @@ import { getAllPosts } from "@/lib/getAllPosts"
 import Link from "next/link"
 import Image from "next/image"
 import { Search, Facebook, Instagram, Twitter, Youtube } from "lucide-react"
+import AutoDate from "@/components/AutoDate"
 
 interface BlogPageProps {
   searchParams: { tag?: string }
@@ -24,10 +25,12 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Top Header */}
+      {/* Top Header dengan tanggal otomatis */}
       <div className="bg-gray-800 text-white px-4 py-2">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="text-sm">Rabu, Juli 9, 2025</div>
+          <div className="text-sm">
+            <AutoDate format="full" />
+          </div>
           <div className="hidden sm:flex items-center gap-3">
             <Link href="#" className="hover:text-blue-400">
               <Facebook className="w-4 h-4" />
@@ -205,7 +208,7 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
                     </h2>
                     <p className="text-gray-600 mb-3 text-sm md:text-base">{featuredPost.excerpt}</p>
                     <div className="flex items-center justify-between text-sm text-gray-500">
-                      <span>{featuredPost.date}</span>
+                      <AutoDate date={featuredPost.date} format="relative" />
                       <span className="text-blue-600 group-hover:underline">Baca Selengkapnya →</span>
                     </div>
                   </Link>
@@ -237,7 +240,7 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
                           </h3>
                           <p className="text-xs md:text-sm text-gray-600 mb-2 line-clamp-2">{post.excerpt}</p>
                           <div className="flex items-center justify-between text-xs text-gray-500">
-                            <span>{post.date}</span>
+                            <AutoDate date={post.date} format="relative" />
                             <div className="flex gap-1 md:gap-2 overflow-hidden">
                               {post.tags?.slice(0, 2).map((tag) => (
                                 <span key={tag} className="bg-gray-100 px-1 md:px-2 py-1 rounded text-xs">

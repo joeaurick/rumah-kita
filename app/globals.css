@@ -16,6 +16,11 @@ body {
   display: none;
 }
 
+/* Smooth horizontal scroll */
+.scrollbar-hide {
+  scroll-behavior: smooth;
+}
+
 /* Line clamp utilities */
 .line-clamp-2 {
   display: -webkit-box;
@@ -44,6 +49,15 @@ body {
   textarea {
     font-size: 16px; /* Prevents zoom on iOS */
   }
+
+  /* Better mobile navigation spacing */
+  .mobile-nav-item {
+    padding: 8px 12px;
+    margin-right: 8px;
+    border-radius: 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
 }
 
 /* Smooth transitions */
@@ -52,4 +66,20 @@ body {
     transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+/* Ensure proper spacing for mobile navigation */
+@media (max-width: 768px) {
+  .mobile-category-nav {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .mobile-category-nav > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
 }

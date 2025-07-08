@@ -168,45 +168,76 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Navigation Categories - Horizontal scroll on mobile */}
-      <nav className="bg-white border-b px-4 py-3">
+      {/* Navigation Categories - FIXED MOBILE VERSION */}
+      <nav className="bg-white border-b">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-4 md:gap-8 overflow-x-auto scrollbar-hide">
-            <div className="relative flex-shrink-0">
-              <button className="flex items-center gap-2 font-semibold text-gray-800 hover:text-blue-600 whitespace-nowrap">
-                <Menu className="w-4 h-4 md:hidden" />
-                <span className="hidden md:inline">SEMUA KATEGORI</span>
-                <span className="md:hidden">KATEGORI</span>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8 px-4 py-3">
+            <div className="relative">
+              <button className="flex items-center gap-2 font-semibold text-gray-800 hover:text-blue-600">
+                SEMUA KATEGORI
                 <ChevronDown className="w-4 h-4" />
               </button>
             </div>
-            <Link
-              href="/rumah-dijual"
-              className="text-gray-600 hover:text-blue-600 whitespace-nowrap text-sm md:text-base"
-            >
+            <Link href="/rumah-dijual" className="text-gray-600 hover:text-blue-600">
               Rumah Dijual
             </Link>
-            <Link
-              href="/rumah-disewa"
-              className="text-gray-600 hover:text-blue-600 whitespace-nowrap text-sm md:text-base"
-            >
+            <Link href="/rumah-disewa" className="text-gray-600 hover:text-blue-600">
               Rumah Disewa
             </Link>
-            <Link
-              href="/apartemen-dijual"
-              className="text-gray-600 hover:text-blue-600 whitespace-nowrap text-sm md:text-base"
-            >
+            <Link href="/apartemen-dijual" className="text-gray-600 hover:text-blue-600">
               Apartemen Dijual
             </Link>
-            <Link
-              href="/apartemen-disewa"
-              className="text-gray-600 hover:text-blue-600 whitespace-nowrap text-sm md:text-base"
-            >
+            <Link href="/apartemen-disewa" className="text-gray-600 hover:text-blue-600">
               Apartemen Disewa
             </Link>
-            <Link href="/blog" className="text-gray-600 hover:text-blue-600 whitespace-nowrap text-sm md:text-base">
+            <Link href="/blog" className="text-gray-600 hover:text-blue-600">
               Tips Properti
             </Link>
+          </div>
+
+          {/* Mobile Navigation - Horizontal Scroll Fixed */}
+          <div className="md:hidden px-4 py-3">
+            <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide pb-2">
+              <div className="flex items-center gap-2 bg-gray-100 px-3 py-2 rounded-lg flex-shrink-0">
+                <Menu className="w-4 h-4 text-gray-600" />
+                <span className="text-sm font-medium text-gray-800 whitespace-nowrap">KATEGORI</span>
+                <ChevronDown className="w-4 h-4 text-gray-600" />
+              </div>
+
+              <div className="flex items-center gap-2 ml-2">
+                <Link
+                  href="/rumah-dijual"
+                  className="bg-blue-50 text-blue-700 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0 border border-blue-200"
+                >
+                  Rumah Dijual
+                </Link>
+                <Link
+                  href="/rumah-disewa"
+                  className="bg-green-50 text-green-700 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0 border border-green-200"
+                >
+                  Rumah Disewa
+                </Link>
+                <Link
+                  href="/apartemen-dijual"
+                  className="bg-purple-50 text-purple-700 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0 border border-purple-200"
+                >
+                  Apartemen Dijual
+                </Link>
+                <Link
+                  href="/apartemen-disewa"
+                  className="bg-orange-50 text-orange-700 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0 border border-orange-200"
+                >
+                  Apartemen Disewa
+                </Link>
+                <Link
+                  href="/blog"
+                  className="bg-gray-50 text-gray-700 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0 border border-gray-200"
+                >
+                  Tips Properti
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
