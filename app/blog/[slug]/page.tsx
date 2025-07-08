@@ -89,7 +89,7 @@ export default async function BlogPost({ params }: Props) {
       <h1 className="text-3xl font-bold mb-2 text-blue-900">{blog.title}</h1>
       <p className="text-gray-500 text-sm mb-6">{blog.date}</p>
       <div
-        className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-strong:text-gray-900"
+        className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-prose-strong:text-gray-900"
         dangerouslySetInnerHTML={{ __html: blog.contentHtml }}
       />
     </article>
