@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: 'Infoproperti',
     images: [
       {
-        url: 'https://infoproperti.vercel.app/images/og-image.jpg',
+        url: 'https://infoproperti.vercel.app/images/logo.png',
         width: 1200,
         height: 630,
         alt: 'Infoproperti',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     site: '@infoproperti',
     title: 'Infoproperti | Jual Beli Sewa Properti',
     description: 'Solusi properti lengkap: rumah, apartemen, tanah, dan ruko.',
-    images: ['https://infoproperti.vercel.app/images/og-image.jpg'],
+    images: ['https://infoproperti.vercel.app/images/logo.png'],
   },
   verification: {
     google: '20y4xxpH-qzsOpT28K9G4t9TzsuYUnE1JJAKEY__RU4',

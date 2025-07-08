@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import PropertyCard from "@/components/PropertyCard"
 import { getAllPosts } from "@/lib/getAllPosts"
 
@@ -154,6 +155,15 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             {blogPreview.map((post, idx) => (
               <div key={idx} className="border rounded-lg p-5 shadow hover:shadow-md transition bg-white">
+                <div className="relative h-48 w-full mb-4 overflow-hidden rounded-lg">
+                  <Image
+                    src="https://via.placeholder.com/400x200/1e40af/ffffff?text=Blog+Post"
+                    alt={post.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
                 <h3 className="text-lg font-semibold text-blue-700 mb-2">{post.title}</h3>
                 <p className="text-sm text-gray-600">{post.excerpt}</p>
                 <Link href={`/blog/${post.slug}`} className="text-blue-600 hover:underline mt-3 inline-block text-sm">
