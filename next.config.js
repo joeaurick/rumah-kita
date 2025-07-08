@@ -7,12 +7,15 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['placeholder.svg'],
+    domains: ["placeholder.svg"],
     dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
+    contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     unoptimized: true,
   },
+  experimental: {
+    serverComponentsExternalPackages: ["marked", "gray-matter"],
+  },
 }
 
-export default nextConfig
+module.exports = nextConfig

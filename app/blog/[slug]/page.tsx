@@ -10,26 +10,8 @@ type Props = {
   }
 }
 
-// Function to get all blog slugs for static generation
-export async function generateStaticParams() {
-  try {
-    const blogDir = path.join(process.cwd(), "content/blog")
-
-    if (!fs.existsSync(blogDir)) {
-      return []
-    }
-
-    const files = fs.readdirSync(blogDir)
-    return files
-      .filter((file) => file.endsWith(".md"))
-      .map((file) => ({
-        slug: file.replace(/\.md$/, ""),
-      }))
-  } catch (error) {
-    console.error("Error generating static params:", error)
-    return []
-  }
-}
+// Disable static generation temporarily
+export const dynamic = "force-dynamic"
 
 // Function to get blog by slug
 async function getBlogBySlug(slug: string) {
@@ -70,9 +52,6 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: blog.title,
     description: blog.description,
-    alternates: {
-      canonical: `/blog/${params.slug}`,
-    },
   }
 }
 
@@ -89,7 +68,7 @@ export default async function BlogPost({ params }: Props) {
       <h1 className="text-3xl font-bold mb-2 text-blue-900">{blog.title}</h1>
       <p className="text-gray-500 text-sm mb-6">{blog.date}</p>
       <div
-        className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-prose-strong:text-gray-900"
+        className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-strong:text-gray-900"
         dangerouslySetInnerHTML={{ __html: blog.contentHtml }}
       />
     </article>
