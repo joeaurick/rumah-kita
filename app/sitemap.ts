@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Get all blog posts
   const posts = getAllPosts()
 
-  // Static pages
+  // Only include pages that actually exist
   const staticPages = [
     {
       url: baseUrl,
@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // Dynamic blog pages
+  // Only include blog pages that exist
   const blogPages = posts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.date || new Date()),
@@ -43,31 +43,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  // Sample property listings (you can make this dynamic later)
-  const propertyPages = [
-    "rumah-mewah-jakarta",
-    "rumah-minimalis-bandung",
-    "villa-di-bali",
-    "rumah-cluster-depok",
-    "rumah-subsidi-cibubur",
-    "apartemen-taman-anggrek",
-    "ruko-strategis-bekasi",
-    "tanah-kavling-bogor",
-    "kontrakan-10-pintu",
-  ].map((slug) => ({
-    url: `${baseUrl}/listings/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.7,
-  }))
+  // DON'T include property pages that don't exist yet
+  // const propertyPages = [...]
 
-  // Category pages
-  const categoryPages = ["rumah-dijual", "rumah-disewa", "apartemen-dijual", "apartemen-disewa"].map((category) => ({
-    url: `${baseUrl}/${category}`,
-    lastModified: new Date(),
-    changeFrequency: "daily" as const,
-    priority: 0.8,
-  }))
+  // DON'T include category pages that don't exist yet
+  // const categoryPages = [...]
 
-  return [...staticPages, ...blogPages, ...propertyPages, ...categoryPages]
+  return [...staticPages, ...blogPages]
 }
