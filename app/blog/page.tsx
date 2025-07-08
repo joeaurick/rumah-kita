@@ -193,7 +193,7 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
                   <Link href={`/blog/${featuredPost.slug}`} className="block group">
                     <div className="relative h-48 md:h-64 w-full mb-4 overflow-hidden rounded-lg">
                       <Image
-                        src="https://via.placeholder.com/600x300/3b82f6/ffffff?text=Featured+Article"
+                        src="/images/cara-menghitung-biaya-notaris.jpg"
                         alt={featuredPost.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -224,7 +224,7 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
                         <Link href={`/blog/${post.slug}`}>
                           <div className="relative w-20 h-20 md:w-24 md:h-24 overflow-hidden rounded-lg">
                             <Image
-                              src="https://via.placeholder.com/150x150/10b981/ffffff?text=Article"
+                              src="/images/favicon.png"
                               alt={post.title}
                               fill
                               className="object-cover hover:scale-105 transition-transform duration-300"
