@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getBlogBySlug } from '@/lib/getBlogs';
+import { getBlogBySlug, getAllBlogs } from '@/lib/getBlogs';
 import SEOHead from '@/components/SEOHead';
 
 type Props = {
@@ -8,6 +8,15 @@ type Props = {
   };
 };
 
+// ✅ Generate dynamic routes for static build
+export async function generateStaticParams() {
+  const blogs = await getAllBlogs();
+  return blogs.map((blog) => ({
+    slug: blog.slug,
+  }));
+}
+
+// ✅ SEO metadata
 export async function generateMetadata({ params }: Props) {
   const blog = await getBlogBySlug(params.slug);
   if (!blog) return {};
@@ -18,9 +27,9 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
+// ✅ Page component
 export default async function Page({ params }: Props) {
   const blog = await getBlogBySlug(params.slug);
-
   if (!blog) return notFound();
 
   return (
