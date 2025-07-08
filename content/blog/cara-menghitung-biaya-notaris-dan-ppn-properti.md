@@ -2,7 +2,7 @@
 title: "Cara Menghitung Biaya Notaris dan PPN Saat Beli Rumah di Tahun 2025"
 date: "2025-07-09"
 excerpt: "Jangan sampai tertipu biaya tambahan saat beli rumah! Ini panduan terbaru 2025 untuk menghitung biaya notaris, PPN, dan biaya lainnya saat transaksi properti."
-author: "Properti Kita"
+author: "Info Properti"
 tags: ["biaya notaris", "ppn rumah", "simulasi biaya", "beli rumah", "edukasi properti"]
 ---
 

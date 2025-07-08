@@ -47,5 +47,5 @@ Dengan suku bunga rendah, insentif, dan tren harga yang stabil namun tumbuh mode
 
 > “Timing terbaik tidak menunggu semua sempurna, tapi mulai ketika siap.”  
 
-🚀 Konsultasi gratis untuk KPR dan investasimu? Kontak tim **Properti Kita** sekarang!
+🚀 Konsultasi gratis untuk KPR dan investasimu? Kontak tim **Info Properti** sekarang!
 

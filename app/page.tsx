@@ -1,6 +1,7 @@
 // File: app/page.tsx
 
 import Link from "next/link";
+import Image from "next/image";
 import PropertyCard from "@/components/PropertyCard";
 import fs from "fs";
 import path from "path";
@@ -12,7 +13,7 @@ const featuredListings = [
     title: "Rumah Mewah di Jakarta",
     location: "Jakarta Selatan",
     price: "Rp 2.500.000.000",
-    image: "https://source.unsplash.com/featured/?house,jakarta",
+    image: "/images/og-image.jpg",
     slug: "rumah-mewah-jakarta",
     promo: "Hot Deal",
   },
@@ -20,7 +21,7 @@ const featuredListings = [
     title: "Rumah Minimalis di Bandung",
     location: "Bandung",
     price: "Rp 850.000.000",
-    image: "https://source.unsplash.com/featured/?house,bandung",
+    image: "/images/sold-out.jpg",
     slug: "rumah-minimalis-bandung",
     promo: "Diskon 10%",
   },
@@ -28,28 +29,28 @@ const featuredListings = [
     title: "Villa di Bali",
     location: "Ubud, Bali",
     price: "Rp 3.200.000.000",
-    image: "https://source.unsplash.com/featured/?villa,bali",
+    image: "/images/sold-out.jpg",
     slug: "villa-di-bali",
   },
   {
     title: "Rumah Subsidi Bekasi Utara",
     location: "Bekasi, Jawa Barat",
     price: "Rp 180.000.000",
-    image: "https://source.unsplash.com/featured/?subsidized,house,bekasi",
+    image: "/images/sold-out.jpg",
     slug: "rumah-subsidi-bekasi",
   },
   {
     title: "Cluster Premium Serpong",
     location: "Serpong, Tangerang Selatan",
     price: "Rp 1.200.000.000",
-    image: "https://source.unsplash.com/featured/?cluster,serpong",
+    image: "/images/sold-out.jpg",
     slug: "cluster-premium-serpong",
   },
   {
     title: "Rumah Dekat Tol Cibubur",
     location: "Cibubur, Jakarta Timur",
     price: "Rp 750.000.000",
-    image: "https://source.unsplash.com/featured/?house,cibubur",
+    image: "/images/sold-out.jpg",
     slug: "rumah-dekat-tol-cibubur",
   },
 ];
@@ -80,10 +81,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Properti Kita - Portal Properti dan Listing Rumah Terpercaya</title>
+        <title>Info Properti - Portal Properti dan Listing Rumah Terpercaya</title>
         <meta
           name="description"
-          content="Temukan rumah impian, artikel properti terkini, dan listing properti terbaru di Indonesia hanya di Properti Kita."
+          content="Temukan rumah impian, artikel properti terkini, dan listing properti terbaru di Indonesia hanya di Info Properti."
         />
         <script
           type="application/ld+json"
@@ -91,8 +92,8 @@ export default function Home() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "Properti Kita",
-              url: "https://properti-kita.com",
+              name: "Info Properti",
+              url: "https://infoproperti.vercel.app",
               description:
                 "Situs properti terpercaya untuk menemukan rumah dan membaca artikel edukatif seputar properti."
             })
@@ -100,29 +101,17 @@ export default function Home() {
         />
       </Head>
 
-      <main>
+      <main className="bg-gray-100 min-h-screen">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-900 to-black text-white py-20 text-center">
-          <div className="max-w-3xl mx-auto px-4">
-            <h1 className="text-4xl font-extrabold mb-4">
-              Selamat datang di Properti Kita
-            </h1>
-            <p className="text-lg text-gray-200 mb-6">
-              Temukan rumah impian Anda, baca artikel properti terkini, atau
-              hubungi kami untuk bantuan. Kami menyediakan informasi properti
-              terupdate & terpercaya.
-            </p>
+        <section className="bg-gradient-to-r from-blue-800 to-black text-white py-16 px-4">
+          <div className="max-w-6xl mx-auto text-center">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4">Temukan Rumah Impianmu di Info Properti</h1>
+            <p className="text-lg md:text-xl mb-6">Jual beli rumah, apartemen, dan properti dengan mudah & terpercaya.</p>
             <div className="flex justify-center gap-4">
-              <Link
-                href="/listings"
-                className="bg-white text-blue-800 px-5 py-2 rounded-md font-semibold hover:bg-gray-100 transition"
-              >
+              <Link href="/listings" className="bg-white text-blue-800 font-semibold px-6 py-3 rounded-full hover:bg-blue-100 transition">
                 Lihat Listing
               </Link>
-              <Link
-                href="/kontak"
-                className="border border-white px-5 py-2 rounded-md font-semibold hover:bg-white hover:text-blue-800 transition"
-              >
+              <Link href="/kontak" className="border border-white text-white font-semibold px-6 py-3 rounded-full hover:bg-white hover:text-blue-800 transition">
                 Hubungi Kami
               </Link>
             </div>
@@ -130,32 +119,23 @@ export default function Home() {
         </section>
 
         {/* Kenapa Kami */}
-        <section className="bg-gray-100 py-16 px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold text-blue-800 text-center mb-10">
-              Kenapa Pilih Kami?
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow">
-                <h3 className="text-blue-700 font-semibold mb-2">Terpercaya</h3>
-                <p className="text-sm text-gray-600">
-                  Kami telah membantu ribuan pelanggan menemukan rumah impian mereka.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow">
-                <h3 className="text-blue-700 font-semibold mb-2">Harga Terbaik</h3>
-                <p className="text-sm text-gray-600">
-                  Listing dengan penawaran menarik dan update setiap hari.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow">
-                <h3 className="text-blue-700 font-semibold mb-2">
-                  Bantuan Profesional
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Tim kami siap membantu Anda 24/7 dalam proses jual beli properti.
-                </p>
-              </div>
+        <section className="max-w-6xl mx-auto py-12 px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-10">Kenapa Pilih Kami?</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-xl shadow p-6 text-center">
+              <Image src="/icons/trusted.png" alt="Terpercaya" width={48} height={48} className="mx-auto mb-4" />
+              <h3 className="text-lg font-semibold mb-2">Terpercaya</h3>
+              <p className="text-gray-600">Sudah membantu ribuan pengguna menemukan rumah impian mereka.</p>
+            </div>
+            <div className="bg-white rounded-xl shadow p-6 text-center">
+              <Image src="/icons/best-price.png" alt="Harga Terbaik" width={48} height={48} className="mx-auto mb-4" />
+              <h3 className="text-lg font-semibold mb-2">Harga Terbaik</h3>
+              <p className="text-gray-600">Dapatkan listing dengan harga kompetitif dan diskon menarik.</p>
+            </div>
+            <div className="bg-white rounded-xl shadow p-6 text-center">
+              <Image src="/icons/support.png" alt="Bantuan 24/7" width={48} height={48} className="mx-auto mb-4" />
+              <h3 className="text-lg font-semibold mb-2">Bantuan 24/7</h3>
+              <p className="text-gray-600">Kami siap membantu proses jual beli properti kapan pun Anda butuh.</p>
             </div>
           </div>
         </section>
@@ -163,9 +143,7 @@ export default function Home() {
         {/* Preview Listing */}
         <section className="bg-white py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold text-blue-800 text-center mb-10">
-              Listing Populer
-            </h2>
+            <h2 className="text-2xl font-bold text-blue-800 text-center mb-10">Listing Populer</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredListings.map((item, idx) => (
                 <PropertyCard key={idx} {...item} />
@@ -186,15 +164,11 @@ export default function Home() {
         {/* Preview Blog */}
         <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold text-blue-800 text-center mb-10">
-              Artikel Terbaru
-            </h2>
+            <h2 className="text-2xl font-bold text-blue-800 text-center mb-10">Artikel Terbaru</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {blogPreview.map((post, idx) => (
                 <div key={idx} className="border rounded-lg p-5 shadow hover:shadow-md transition">
-                  <h3 className="text-lg font-semibold text-blue-700 mb-2">
-                    {post.title}
-                  </h3>
+                  <h3 className="text-lg font-semibold text-blue-700 mb-2">{post.title}</h3>
                   <p className="text-sm text-gray-600">{post.excerpt}</p>
                   <Link
                     href={`/blog/${post.slug}`}

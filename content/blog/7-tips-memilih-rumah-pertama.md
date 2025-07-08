@@ -2,7 +2,7 @@
 title: "7 Tips Memilih Rumah Pertama yang Tepat untuk Keluarga Muda"
 excerpt: "Panduan praktis untuk memilih rumah pertama yang sesuai kebutuhan keluarga muda."
 date: "2025-07-07"
-author: "Properti Kita"
+author: "Info Properti"
 tags: ["tips", "beli rumah", "keluarga muda", "properti", "Properti Indonesia"]
 ---
 

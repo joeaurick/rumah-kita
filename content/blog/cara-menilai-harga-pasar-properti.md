@@ -2,7 +2,7 @@
 title: "Cara Menilai Harga Pasar Properti Sebelum Membeli Rumah"
 excerpt: "Panduan lengkap menilai harga pasar properti agar tidak salah beli rumah."
 date: "2025-07-07"
-author: "Properti Kita"
+author: "Info Properti"
 tags: ["harga properti", "beli rumah", "tips membeli", "pasar properti", "edukasi properti"]
 ---
 

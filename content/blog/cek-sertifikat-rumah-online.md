@@ -2,7 +2,7 @@
 title: "7 Cara Cek Sertifikat Rumah Secara Online Lewat HP (Terbaru 2025)"
 date: "2025-07-07"
 excerpt: "Ingin tahu status legal rumah yang akan Anda beli? Ini panduan terbaru cara cek sertifikat rumah secara online lewat HP, resmi dari BPN/ATR."
-author: "Properti Kita"
+author: "Info Properti"
 tags: ["sertifikat rumah", "cek sertifikat online", "legalitas properti", "tips membeli rumah", "BPN"]
 ---
 
@@ -68,4 +68,4 @@ Kini, mengecek sertifikat rumah bukan hal rumit lagi. Cukup lewat HP dan aplikas
 
 ## Ingin beli rumah yang legalitasnya sudah aman?
 
-Hubungi kami di [Properti Kita](https://properti-kita.com) — bantu Anda cari rumah impian **dengan legalitas 100% jelas dan aman**.
+Hubungi kami di [Info Properti](https://infoproperti.vercel.app) — bantu Anda cari rumah impian **dengan legalitas 100% jelas dan aman**.

@@ -2,7 +2,7 @@
 title: "5 Kota Terbaik untuk Investasi Properti di Indonesia Tahun 2025"
 date: "2025-07-07"
 excerpt: "Cari kota terbaik untuk investasi properti? Temukan 5 kota dengan potensi pertumbuhan tinggi dan infrastruktur strategis di Indonesia pada tahun 2025."
-author: "Properti Kita"
+author: "Info Properti"
 tags: ["investasi", "properti", "2025", "Properti Indonesia", "Properti 2025"]
 ---
 

@@ -1,47 +1,69 @@
-/* File: components/ContactForm.tsx */
+// components/ContactForm.tsx
 "use client";
 import { useState } from "react";
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({ nama: "", email: "", pesan: "" });
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Pesan terkirim! Kami akan menghubungi Anda segera.");
+    // TODO: Handle actual form submission (e.g., emailjs, API)
+    alert("Pesan Anda berhasil dikirim!");
+    setForm({ name: "", email: "", message: "" });
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-xl mx-auto mt-12 bg-white p-6 rounded-lg shadow-md">
+    <form
+      onSubmit={handleSubmit}
+      className="w-full max-w-xl mx-auto bg-white p-6 rounded-2xl shadow-xl space-y-4"
+    >
       <input
-        name="nama"
+        type="text"
+        name="name"
         placeholder="Nama"
+        value={form.name}
         onChange={handleChange}
-        className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
         required
+        className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
       />
       <input
+        type="email"
         name="email"
         placeholder="Email"
-        type="email"
+        value={form.email}
         onChange={handleChange}
-        className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
         required
+        className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
       />
       <textarea
-        name="pesan"
+        name="message"
+        rows={5}
         placeholder="Pesan Anda"
+        value={form.message}
         onChange={handleChange}
-        className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-        rows={4}
         required
-      ></textarea>
-      <button type="submit" className="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800 transition">
-        Kirim
+        className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+      />
+
+      <button
+        type="submit"
+        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-200"
+      >
+        Kirim Pesan
       </button>
+
+      <a
+        href={`https://wa.me/6281234567890?text=Halo%20Info%20Properti%2C%20saya%20ingin%20bertanya%20tentang%20...`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block text-center w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition duration-200"
+      >
+        Hubungi via WhatsApp
+      </a>
     </form>
   );
 }

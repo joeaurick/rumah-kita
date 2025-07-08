@@ -2,7 +2,7 @@
 title: "5 Lokasi Perumahan Subsidi Terbaik di Jabodetabek 2025: Harga, Fasilitas, & Akses"
 excerpt: "Temukan perumahan subsidi terbaik di Jabodetabek tahun 2025. Mulai dari harga terjangkau, fasilitas lengkap, hingga akses transportasi yang mudah dijangkau!"
 date: "2025-07-07"
-author: "Properti Kita"
+author: "Info Properti"
 tags: ["properti", "2025", "Properti 2025", "jual beli rumah", "Pembiayaan Rumah"]
 ---
 
@@ -72,7 +72,7 @@ Harga tanah di Parung masih rendah, tetapi sudah banyak pengembang besar mulai m
 ---
 
 Ingin konsultasi gratis tentang rumah subsidi?  
-Kunjungi halaman **[Kontak Properti Kita](/kontak)** untuk bantuan langsung dari tim ahli kami!
+Kunjungi halaman **[Kontak Info Properti](/kontak)** untuk bantuan langsung dari tim ahli kami!
 
 ---
 

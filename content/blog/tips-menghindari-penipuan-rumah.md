@@ -19,7 +19,7 @@ Sebagai pembeli pertama, Anda harus lebih waspada. Berikut ini panduan yang akan
 
 Waspadalah jika menemukan rumah dengan harga yang jauh di bawah pasaran. Penipu kerap menggunakan trik ini untuk menarik perhatian cepat, lalu menghilang setelah uang muka dibayarkan.
 
-✅ **Solusi:** Lakukan pengecekan harga pasar rumah di lokasi yang sama melalui situs properti terpercaya seperti Rumah123, Rumah.com, atau Properti Kita.
+✅ **Solusi:** Lakukan pengecekan harga pasar rumah di lokasi yang sama melalui situs properti terpercaya seperti Rumah123, Rumah.com, atau Info Properti.
 
 ---
 
@@ -64,4 +64,4 @@ Bagikan artikel ini kepada teman atau keluarga yang sedang mencari rumah. Karena
 ---
 
 **Ingin tahu rumah-rumah terbaik dengan pengembang terpercaya?**  
-👉 [Lihat listing properti terpercaya kami di sini](https://properti-kita.com/listings)
+👉 [Lihat listing properti terpercaya kami di sini](https://infoproperti.vercel.app/listings)

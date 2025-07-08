@@ -7,7 +7,7 @@ const listings = [
     title: "Rumah Mewah di Jakarta",
     location: "Jakarta Selatan",
     price: "Rp 2.500.000.000",
-    image: "https://source.unsplash.com/featured/?house,jakarta",
+    image: "/images/og-image.jpg",
     slug: "rumah-mewah-jakarta",
     promo: "Hot Deal",
   },
@@ -15,7 +15,7 @@ const listings = [
     title: "Rumah Minimalis di Bandung",
     location: "Bandung",
     price: "Rp 850.000.000",
-    image: "https://source.unsplash.com/featured/?house,bandung",
+    image: "/images/sold-out.jpg",
     slug: "rumah-minimalis-bandung",
     promo: "Diskon 10%",
   },
@@ -23,141 +23,86 @@ const listings = [
     title: "Villa di Bali",
     location: "Ubud, Bali",
     price: "Rp 3.200.000.000",
-    image: "https://source.unsplash.com/featured/?villa,bali",
+    image: "/images/sold-out.jpg",
     slug: "villa-di-bali",
   },
   {
     title: "Rumah Cluster Depok Sawangan",
     location: "Depok, Jawa Barat",
     price: "Rp 650.000.000",
-    image: "https://source.unsplash.com/featured/?house,depok",
+    image: "/images/sold-out.jpg",
     slug: "rumah-cluster-depok",
   },
   {
-    title: "Rumah Subsidi Bekasi Utara",
-    location: "Bekasi, Jawa Barat",
-    price: "Rp 180.000.000",
-    image: "https://source.unsplash.com/featured/?subsidized,house,bekasi",
-    slug: "rumah-subsidi-bekasi",
-  },
-  {
-    title: "Apartemen Tangerang Dekat Stasiun",
-    location: "Tangerang Kota",
-    price: "Rp 400.000.000",
-    image: "https://source.unsplash.com/featured/?apartment,tangerang",
-    slug: "apartemen-tangerang",
-  },
-  {
-    title: "Rumah Subsidi Bogor Cileungsi",
-    location: "Cileungsi, Bogor",
-    price: "Rp 220.000.000",
-    image: "https://source.unsplash.com/featured/?house,bogor",
-    slug: "rumah-subsidi-bogor",
-  },
-  {
-    title: "Cluster Premium Serpong",
-    location: "Serpong, Tangerang Selatan",
-    price: "Rp 1.200.000.000",
-    image: "https://source.unsplash.com/featured/?cluster,serpong",
-    slug: "cluster-premium-serpong",
-  },
-  {
-    title: "Rumah Dekat Tol Cibubur",
+    title: "Rumah Subsidi Cibubur",
     location: "Cibubur, Jakarta Timur",
-    price: "Rp 750.000.000",
-    image: "https://source.unsplash.com/featured/?house,cibubur",
-    slug: "rumah-dekat-tol-cibubur",
+    price: "Rp 320.000.000",
+    image: "/images/sold-out.jpg",
+    slug: "rumah-subsidi-cibubur",
+    promo: "Cicilan Ringan",
   },
   {
-    title: "Rumah Second Siap Huni di Bekasi",
-    location: "Bekasi Kota",
-    price: "Rp 570.000.000",
-    image: "https://source.unsplash.com/featured/?second-house,bekasi",
-    slug: "rumah-second-bekasi",
-  },
-  {
-    title: "Apartemen Studio Depok Margonda",
-    location: "Depok Kota",
-    price: "Rp 300.000.000",
-    image: "https://source.unsplash.com/featured/?studio-apartment,depok",
-    slug: "apartemen-studio-depok",
-  },
-  {
-    title: "Perumahan Baru BSD City",
-    location: "BSD City, Tangsel",
-    price: "Rp 1.800.000.000",
-    image: "https://source.unsplash.com/featured/?bsd-house",
-    slug: "perumahan-baru-bsd",
-  },
-  {
-    title: "Rumah Subsidi Karawang",
-    location: "Karawang Timur",
-    price: "Rp 190.000.000",
-    image: "https://source.unsplash.com/featured/?subsidized,house,karawang",
-    slug: "rumah-subsidi-karawang",
-  },
-  {
-    title: "Apartemen Green Lake Jakarta Barat",
+    title: "Apartemen Taman Anggrek",
     location: "Jakarta Barat",
-    price: "Rp 550.000.000",
-    image: "https://source.unsplash.com/featured/?apartment,jakarta",
-    slug: "apartemen-greenlake-jakbar",
+    price: "Rp 1.200.000.000",
+    image: "/images/sold-out.jpg",
+    slug: "apartemen-taman-anggrek",
   },
   {
-    title: "Rumah Tumbuh di Cikarang",
-    location: "Cikarang, Bekasi",
-    price: "Rp 290.000.000",
-    image: "https://source.unsplash.com/featured/?house,cikarang",
-    slug: "rumah-tumbuh-cikarang",
-  },
-  {
-    title: "Cluster Eksklusif Alam Sutera",
-    location: "Alam Sutera, Tangerang",
-    price: "Rp 2.100.000.000",
-    image: "https://source.unsplash.com/featured/?house,alam-sutera",
-    slug: "cluster-alam-sutera",
-  },
-  {
-    title: "Rumah Kosongan Pondok Cabe",
-    location: "Pondok Cabe, Tangsel",
-    price: "Rp 400.000.000",
-    image: "https://source.unsplash.com/featured/?house,pondok-cabe",
-    slug: "rumah-pondok-cabe",
-  },
-  {
-    title: "Rumah Siap Huni Cibinong",
-    location: "Cibinong, Bogor",
-    price: "Rp 510.000.000",
-    image: "https://source.unsplash.com/featured/?house,cibinong",
-    slug: "rumah-cibinong",
-  },
-  {
-    title: "Cluster Modern Cinere",
-    location: "Cinere, Depok",
+    title: "Ruko Strategis Bekasi",
+    location: "Bekasi",
     price: "Rp 980.000.000",
-    image: "https://source.unsplash.com/featured/?house,cinere",
-    slug: "cluster-modern-cinere",
+    image: "/images/sold-out.jpg",
+    slug: "ruko-strategis-bekasi",
+    promo: "Harga Nego",
   },
   {
-    title: "Apartemen Dekat UI",
-    location: "Depok Margonda",
-    price: "Rp 420.000.000",
-    image: "https://source.unsplash.com/featured/?apartment,ui",
-    slug: "apartemen-dekat-ui",
-  }
+    title: "Tanah Kavling Bogor",
+    location: "Bogor",
+    price: "Rp 450.000.000",
+    image: "/images/sold-out.jpg",
+    slug: "tanah-kavling-bogor",
+  },
+  {
+    title: "Kontrakan 10 Pintu",
+    location: "Depok",
+    price: "Rp 1.000.000.000",
+    image: "/images/sold-out.jpg",
+    slug: "kontrakan-10-pintu",
+  },
 ];
 
 export default function ListingsPage() {
   return (
-    <main className="bg-gray-100 min-h-screen px-4 py-10">
-      <h1 className="text-3xl font-bold text-blue-800 mb-8 text-center">
-        Listing Properti Terkini
-      </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {listings.map((item, idx) => (
-          <PropertyCard key={idx} {...item} />
-        ))}
-      </div>
+    <main className="bg-gray-50 min-h-screen px-4 pt-6 pb-20">
+      <section className="max-w-7xl mx-auto">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 border-b pb-2">
+          Jual Beli Rumah & Apartemen Terbaru
+        </h1>
+
+        <div className="flex flex-col md:flex-row gap-6">
+          {/* Sidebar Kategori */}
+          <aside className="w-full md:w-1/4 bg-white rounded-xl shadow p-4">
+            <h2 className="text-lg font-semibold text-gray-700 mb-4">Lokasi</h2>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li className="font-medium text-black">Indonesia</li>
+              <li className="pl-4">Jakarta D.K.I.</li>
+              <li className="pl-8 font-bold text-blue-600">Jakarta Selatan</li>
+              <li className="pl-8 text-gray-400">Setia Budi (4.786)</li>
+              <li className="pl-8 text-gray-400">Cilandak (4.701)</li>
+              <li className="pl-8 text-gray-400">Jagakarsa (3.770)</li>
+              <li className="pl-8 text-gray-400">Kebayoran Lama (3.770)</li>
+            </ul>
+          </aside>
+
+          {/* Grid Property */}
+          <div className="w-full md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {listings.map((item, idx) => (
+              <PropertyCard key={idx} {...item} />
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

@@ -2,7 +2,7 @@
 title: "Perbandingan KPR Konvensional vs Syariah: Mana yang Tepat untuk Anda?"
 excerpt: "Pelajari kelebihan dan kekurangan KPR konvensional dan KPR syariah sebelum memilih pembiayaan rumah yang sesuai dengan kebutuhan dan prinsip Anda."
 date: "2025-07-07"
-author: "Properti Kita"
+author: "Info Properti"
 slug: "perbandingan-kpr-konvensional-vs-syariah"
 tags: ["KPR", "Syariah", "Pembiayaan Rumah", "Properti Indonesia"]
 ---
@@ -64,4 +64,4 @@ Baik KPR Konvensional maupun Syariah memiliki kelebihan dan kekurangan masing-ma
 
 ---
 
-**Butuh bantuan memilih KPR yang cocok?** Hubungi tim Properti Kita untuk konsultasi gratis seputar properti dan pembiayaan rumah!
+**Butuh bantuan memilih KPR yang cocok?** Hubungi tim Info Properti untuk konsultasi gratis seputar properti dan pembiayaan rumah!
