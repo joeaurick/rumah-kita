@@ -1,66 +1,37 @@
-// File: app/blog/[slug]/page.tsx
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import { notFound } from 'next/navigation';
-import Markdown from 'markdown-to-jsx';
+import { getBlogBySlug } from '@/lib/getBlogs';
+import SEOHead from '@/components/SEOHead';
 
-export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join(process.cwd(), 'content/blog'));
-  return files.map((file) => ({
-    slug: file.replace(/\.md$/, ''),
-  }));
-}
+type Props = {
+  params: {
+    slug: string;
+  };
+};
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const filePath = path.join(process.cwd(), 'content/blog', `${params.slug}.md`);
-  if (!fs.existsSync(filePath)) return {};
-
-  const fileContent = fs.readFileSync(filePath, 'utf8');
-  const { data } = matter(fileContent);
+export async function generateMetadata({ params }: Props) {
+  const blog = await getBlogBySlug(params.slug);
+  if (!blog) return {};
 
   return {
-    title: `${data.title} | Info Properti`,
-    description: data.excerpt,
-    alternates: {
-      canonical: `https://infoproperti.vercel.app/blog/${params.slug}`,
-    },
-    openGraph: {
-      title: `${data.title} | Info Properti`,
-      description: data.excerpt,
-      type: 'article',
-      url: `https://infoproperti.vercel.app/blog/${params.slug}`,
-      images: [
-        {
-          url: 'https://infoproperti.vercel.app/images/og-image.jpg',
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${data.title} | Info Properti`,
-      description: data.excerpt,
-      images: ['https://infoproperti.vercel.app/images/og-image.jpg'],
-    },
+    title: blog.title,
+    description: blog.description,
   };
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
-  const filePath = path.join(process.cwd(), 'content/blog', `${params.slug}.md`);
-  if (!fs.existsSync(filePath)) return notFound();
+export default async function Page({ params }: Props) {
+  const blog = await getBlogBySlug(params.slug);
 
-  const fileContent = fs.readFileSync(filePath, 'utf8');
-  const { data, content } = matter(fileContent);
+  if (!blog) return notFound();
 
   return (
-    <main className="max-w-3xl mx-auto px-6 py-20 font-sans">
-      <article className="max-w-none text-[17px] leading-relaxed text-gray-800">
-        <h1 className="text-4xl font-bold text-blue-900 leading-tight mb-4">
-          {data.title}
-        </h1>
-        <p className="text-gray-500 text-sm mb-10">{data.date}</p>
-        <Markdown>{content}</Markdown>
-      </article>
-    </main>
+    <article className="p-4 max-w-3xl mx-auto">
+      <SEOHead title={blog.title} description={blog.description} />
+      <h1 className="text-3xl font-bold mb-2">{blog.title}</h1>
+      <p className="text-gray-500 text-sm mb-6">{blog.date}</p>
+      <div
+        className="prose prose-lg"
+        dangerouslySetInnerHTML={{ __html: blog.contentHtml }}
+      />
+    </article>
   );
 }
