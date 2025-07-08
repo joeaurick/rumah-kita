@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { getAllPosts } from "@/lib/getAllPosts"
 import { Search, MapPin, ChevronDown, Heart, Menu } from "lucide-react"
+import Head from "next/head"
 
 const featuredListings = [
   {
