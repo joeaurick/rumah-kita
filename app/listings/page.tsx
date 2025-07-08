@@ -1,6 +1,5 @@
 import PropertyCard from "@/components/PropertyCard"
 import PropertyFilter from "@/components/PropertyFilter"
-import { Button } from "@/components/ui/button"
 import { Grid, List } from "lucide-react"
 
 const listings = [
@@ -85,12 +84,12 @@ export default function ListingsPage() {
           <div className="flex items-center gap-4">
             <PropertyFilter />
             <div className="flex border rounded-lg">
-              <Button variant="ghost" size="sm" className="rounded-r-none">
+              <button className="p-2 hover:bg-gray-100 rounded-l-lg">
                 <Grid className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="sm" className="rounded-l-none">
+              </button>
+              <button className="p-2 hover:bg-gray-100 rounded-r-lg">
                 <List className="h-4 w-4" />
-              </Button>
+              </button>
             </div>
           </div>
         </div>
@@ -144,21 +143,11 @@ export default function ListingsPage() {
             {/* Pagination */}
             <div className="flex justify-center mt-8">
               <div className="flex space-x-2">
-                <Button variant="outline" size="sm">
-                  Previous
-                </Button>
-                <Button variant="outline" size="sm" className="bg-blue-600 text-white">
-                  1
-                </Button>
-                <Button variant="outline" size="sm">
-                  2
-                </Button>
-                <Button variant="outline" size="sm">
-                  3
-                </Button>
-                <Button variant="outline" size="sm">
-                  Next
-                </Button>
+                <button className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">Previous</button>
+                <button className="px-3 py-1 bg-blue-600 text-white rounded">1</button>
+                <button className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">2</button>
+                <button className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">3</button>
+                <button className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">Next</button>
               </div>
             </div>
           </div>

@@ -2,11 +2,6 @@
 
 import { useState } from "react"
 import { Filter, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Label } from "@/components/ui/label"
-import { Slider } from "@/components/ui/slider"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 
 interface FilterState {
   priceRange: number[]
@@ -17,6 +12,7 @@ interface FilterState {
 }
 
 export default function PropertyFilter() {
+  const [isOpen, setIsOpen] = useState(false)
   const [filters, setFilters] = useState<FilterState>({
     priceRange: [0, 5000000000],
     bedrooms: [],
@@ -51,105 +47,122 @@ export default function PropertyFilter() {
     })
   }
 
-  return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline" className="gap-2 bg-transparent">
-          <Filter className="h-4 w-4" />
-          Filter
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="max-w-md max-h-[80vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="flex items-center justify-between">
-            Filter Properti
-            <Button variant="ghost" size="sm" onClick={clearFilters}>
-              <X className="h-4 w-4" />
-              Clear
-            </Button>
-          </DialogTitle>
-        </DialogHeader>
+  if (!isOpen) {
+    return (
+      <button
+        onClick={() => setIsOpen(true)}
+        className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md bg-white hover:bg-gray-50 transition"
+      >
+        <Filter className="h-4 w-4" />
+        Filter
+      </button>
+    )
+  }
 
-        <div className="space-y-6 mt-6">
-          {/* Price Range */}
-          <div>
-            <Label className="text-sm font-medium">Rentang Harga</Label>
-            <div className="mt-2">
-              <Slider
-                value={filters.priceRange}
-                onValueChange={(value) => setFilters((prev) => ({ ...prev, priceRange: value }))}
-                max={5000000000}
-                min={0}
-                step={100000000}
-                className="w-full"
-              />
-              <div className="flex justify-between text-xs text-gray-500 mt-1">
-                <span>{formatPrice(filters.priceRange[0])}</span>
-                <span>{formatPrice(filters.priceRange[1])}</span>
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+      <div className="bg-white rounded-lg max-w-md w-full max-h-[80vh] overflow-y-auto">
+        <div className="p-6">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-lg font-semibold">Filter Properti</h2>
+            <div className="flex gap-2">
+              <button onClick={clearFilters} className="text-sm text-gray-500 hover:text-gray-700">
+                Clear
+              </button>
+              <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-gray-700">
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            {/* Price Range */}
+            <div>
+              <label className="block text-sm font-medium mb-2">Rentang Harga</label>
+              <div className="space-y-2">
+                <input
+                  type="range"
+                  min="0"
+                  max="5000000000"
+                  step="100000000"
+                  value={filters.priceRange[1]}
+                  onChange={(e) =>
+                    setFilters((prev) => ({ ...prev, priceRange: [0, Number.parseInt(e.target.value)] }))
+                  }
+                  className="w-full"
+                />
+                <div className="flex justify-between text-xs text-gray-500">
+                  <span>{formatPrice(filters.priceRange[0])}</span>
+                  <span>{formatPrice(filters.priceRange[1])}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Property Type */}
+            <div>
+              <label className="block text-sm font-medium mb-2">Tipe Properti</label>
+              <div className="space-y-2">
+                {["Rumah", "Apartemen", "Villa", "Ruko", "Tanah"].map((type) => (
+                  <label key={type} className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      checked={filters.propertyType.includes(type)}
+                      onChange={() => handleCheckboxChange("propertyType", type)}
+                      className="rounded"
+                    />
+                    <span className="text-sm">{type}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Bedrooms */}
+            <div>
+              <label className="block text-sm font-medium mb-2">Kamar Tidur</label>
+              <div className="space-y-2">
+                {["1", "2", "3", "4", "5+"].map((bedroom) => (
+                  <label key={bedroom} className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      checked={filters.bedrooms.includes(bedroom)}
+                      onChange={() => handleCheckboxChange("bedrooms", bedroom)}
+                      className="rounded"
+                    />
+                    <span className="text-sm">{bedroom} Kamar</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Features */}
+            <div>
+              <label className="block text-sm font-medium mb-2">Fasilitas</label>
+              <div className="space-y-2">
+                {["Garasi", "Taman", "Kolam Renang", "Security 24 Jam", "Dekat Sekolah", "Dekat Mall"].map(
+                  (feature) => (
+                    <label key={feature} className="flex items-center space-x-2">
+                      <input
+                        type="checkbox"
+                        checked={filters.features.includes(feature)}
+                        onChange={() => handleCheckboxChange("features", feature)}
+                        className="rounded"
+                      />
+                      <span className="text-sm">{feature}</span>
+                    </label>
+                  ),
+                )}
               </div>
             </div>
           </div>
 
-          {/* Property Type */}
-          <div>
-            <Label className="text-sm font-medium">Tipe Properti</Label>
-            <div className="space-y-2 mt-2">
-              {["Rumah", "Apartemen", "Villa", "Ruko", "Tanah"].map((type) => (
-                <div key={type} className="flex items-center space-x-2">
-                  <Checkbox
-                    id={type}
-                    checked={filters.propertyType.includes(type)}
-                    onCheckedChange={() => handleCheckboxChange("propertyType", type)}
-                  />
-                  <Label htmlFor={type} className="text-sm">
-                    {type}
-                  </Label>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Bedrooms */}
-          <div>
-            <Label className="text-sm font-medium">Kamar Tidur</Label>
-            <div className="space-y-2 mt-2">
-              {["1", "2", "3", "4", "5+"].map((bedroom) => (
-                <div key={bedroom} className="flex items-center space-x-2">
-                  <Checkbox
-                    id={`bedroom-${bedroom}`}
-                    checked={filters.bedrooms.includes(bedroom)}
-                    onCheckedChange={() => handleCheckboxChange("bedrooms", bedroom)}
-                  />
-                  <Label htmlFor={`bedroom-${bedroom}`} className="text-sm">
-                    {bedroom} Kamar
-                  </Label>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Features */}
-          <div>
-            <Label className="text-sm font-medium">Fasilitas</Label>
-            <div className="space-y-2 mt-2">
-              {["Garasi", "Taman", "Kolam Renang", "Security 24 Jam", "Dekat Sekolah", "Dekat Mall"].map((feature) => (
-                <div key={feature} className="flex items-center space-x-2">
-                  <Checkbox
-                    id={feature}
-                    checked={filters.features.includes(feature)}
-                    onCheckedChange={() => handleCheckboxChange("features", feature)}
-                  />
-                  <Label htmlFor={feature} className="text-sm">
-                    {feature}
-                  </Label>
-                </div>
-              ))}
-            </div>
-          </div>
+          <button
+            onClick={() => setIsOpen(false)}
+            className="w-full mt-6 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition"
+          >
+            Terapkan Filter
+          </button>
         </div>
-
-        <Button className="w-full mt-6">Terapkan Filter</Button>
-      </DialogContent>
-    </Dialog>
+      </div>
+    </div>
   )
 }
