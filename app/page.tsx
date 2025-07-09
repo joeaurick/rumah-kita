@@ -349,7 +349,7 @@ export default function Home() {
               </div>
               <div className="absolute right-0 top-0 w-32 md:w-64 h-full opacity-20">
                 <Image
-                  src="/images/infoproperti-gif.gif"
+                  src="/images/logo.png"
                   alt="Banner"
                   fill
                   className="object-cover"
