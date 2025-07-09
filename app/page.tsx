@@ -442,7 +442,7 @@ export default function Home() {
               <div key={idx} className="border rounded-lg p-4 md:p-5 shadow hover:shadow-md transition bg-white">
                 <div className="relative h-40 md:h-48 w-full mb-4 overflow-hidden rounded-lg">
                   <Image
-                    src="https://via.placeholder.com/400x200/1e40af/ffffff?text=Blog+Post"
+                    src="/images/cara-menghitung-biaya-notaris.jpg"
                     alt={post.title}
                     fill
                     className="object-cover"
